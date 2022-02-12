@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios Ipify Api</title>
+</head>
+<body>
+    <p><strong>Your IP Address is</strong> <span id="ip"></span></p>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        //const axios = require('axios');
+
+        // Make a request for a user with a given ID
+        axios.get('https://api.ipify.org?format=json')
+            .then(function (response) {
+                // handle success
+                console.log(response.data.ip);               
+                //$('span[id="ip"]').html(response.data.ip);
+                document.getElementById('ip').innerHTML = response.data.ip;
+                
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .then(function () {
+                // always executed                    
+            });
+    </script>
+</body>
+</html>

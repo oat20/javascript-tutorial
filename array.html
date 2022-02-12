@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="name">
+
+        </div>
+
+        <script>
+            let url = 'https://doc.ph.mahidol.ac.th/eservice/content_json.php';
+
+            fetch(url)
+            .then(function (res) {
+                    console.log(res)
+                    return res.json()
+                })
+                .then(function (data) {
+                    //console.log(data)
+                    var title = '';
+                    data.map((item, i) => {
+                        console.log(item.title);
+                        title += '<p>' + item.title + '</p>';
+                    })
+                    document.getElementById('name').innerHTML = title;
+                })
+                .catch(function(error){
+                    console.error('ERROR');
+                })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="node_modules/axios/dist/axios.min.js"></script>
+        <script>
+            //const axios = require('axios');
+
+            // Make a request for a user with a given ID
+            axios
+				.get('http://ns2.ph.mahidol.ac.th/phonebook/xml/staff-json.php', {
+					params: {
+						id: 10000
+					}
+				})
+                .then((response) => {
+                    // handle success
+                    //console.log(response);
+                    console.log(response.data);
+                    response.data.map((item, index) => {
+                        console.log(item.name);
+                        console.log(item.job.position);
+                        console.log(item.email);
+                        console.log(item.telin);
+                    })
+                })
+                .catch((error) => {
+                    // handle error
+                    console.log(error);
+                })
+                .then(function () {
+                    // always executed
+                });
+        </script>
+    </body>
+</html>
