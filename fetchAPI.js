@@ -17,4 +17,4 @@ fetch(api_url, {
         document.getElementById('imgUrl').src = item.imageUrl;
     })
 })
-.catch(error => console.error('ERROR'))
+.catch((error) => console.error('ERROR'));

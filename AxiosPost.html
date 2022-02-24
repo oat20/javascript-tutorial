@@ -5,12 +5,12 @@
     </head>
     <body>
 
-        <script src="node_modules/axios/dist/axios.min.js"></script>
+        <script src="./node_modules/axios/dist/axios.min.js"></script>
         <script>
             //const axios = require('axios');
             
             // Make a request for a user with a given ID
-            const url = 'https://doc.ph.mahidol.ac.th/phonebook/api/authen_withemail.php';
+            var url = 'https://doc.ph.mahidol.ac.th/phonebook/api/authen_withemail.php';
             axios.post(url, {
                account : 'chakkapan.cha@mahidol.ac.th'
             })
@@ -21,7 +21,7 @@
                 .catch(function (error) {
                     // handle error
                     console.log(error);
-                })
+                });
 
                 // Send a POST request
                    /* axios({
