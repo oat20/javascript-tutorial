@@ -8,12 +8,13 @@
         <script src="node_modules/axios/dist/axios.min.js"></script>
         <script>
             //const axios = require('axios');
-
+            
             // Make a request for a user with a given ID
-            axios.post('http://127.0.0.1/www2/json/PostData.php', {
-               dpName : 'ทดสอบ'
+            const url = 'https://doc.ph.mahidol.ac.th/phonebook/api/authen_withemail.php';
+            axios.post(url, {
+               account : 'chakkapan.cha@mahidol.ac.th'
             })
-                .then(function (response) {
+                .then((response) => {
                     // handle success
                     console.log(response);
                 })
@@ -21,6 +22,18 @@
                     // handle error
                     console.log(error);
                 })
+
+                // Send a POST request
+                   /* axios({
+                        method: 'post',
+                        url: 'https://doc.ph.mahidol.ac.th/phonebook/api/authen_withemail.php',
+                        data: {
+                            account : 'chakkapan.cha@mahidol.ac.th'
+                        }
+                    })
+                    .then(function (response) {
+                            console.log(response);
+                        });*/
         </script>
     </body>
 </html>
