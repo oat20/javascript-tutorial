@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX POST</title>
+</head>
+<body>
+    <form>
+    <input type="text" id="frmName">
+    </form>
+    
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(function(){
+
+            var item = {account: "chakkapan.cha@mahidol.ac.th"};
+
+                /*$.ajax({
+                url: "https://doc.ph.mahidol.ac.th/phonebook/api/authen_withemail.php",
+                dataType: "json",
+                type: "POST",
+                data: JSON.stringify({
+                    account : "chakkapan.cha@mahidol.ac.th"
+                }),
+                success: function (result, status) {
+                    console.log(result);
+                    console.log(result.responseData.name);
+                    console.log(status);
+                }
+            });*/
+
+            $.post("https://doc.ph.mahidol.ac.th/phonebook/api/authen_withemail.php",
+                JSON.stringify(item),
+            function (data, status) {
+                console.log(data);
+                console.log(data.responseData.name);
+                console.log(status);
+
+                $('#frmName').val(data.responseData.name);
+            });
+
+        });
+    </script>
+</body>
+</html>
