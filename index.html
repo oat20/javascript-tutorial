@@ -11,9 +11,15 @@
 
         <p id="randomid"></p>
 
+        <form>
+            <label>Email</label>
+            <input type="email" id="frmEmail">
+        </form>
+
         <script>
             // Define the string
             let decodedStringBtoA = 'Hello World!';
+            const email = 'test@test.com';
             
             // Encode the String
             var encodedStringBtoA = btoa(decodedStringBtoA);
@@ -64,6 +70,8 @@
             console.log(div);
 
             document.getElementById('randomid').innerHTML = '<strong>ID is</strong> ' + div;
+
+            document.getElementById('frmEmail').value = email;
         </script>
     </body>
 </html>
