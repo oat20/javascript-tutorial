@@ -31,15 +31,17 @@
                 }
             });*/
 
-            $.post("https://doc.ph.mahidol.ac.th/phonebook/api/authen_withemail.php",
+            $.post(
+                "https://doc.ph.mahidol.ac.th/phonebook/api/authen_withemail.php",
                 JSON.stringify(item),
-            function (data, status) {
-                console.log(data);
-                console.log(data.responseData.name);
-                console.log(status);
+                function (data, status) {
+                    console.log(data);
+                    console.log(data.responseData.name);
+                    console.log(status);
 
-                $('#frmName').val(data.responseData.name);
-            });
+                    $('#frmName').val(data.responseData.name);
+                }
+            );
 
         });
     </script>
