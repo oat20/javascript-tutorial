@@ -11,10 +11,10 @@
 
     </div>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(function(){
-            $.ajax({
+            /*$.ajax({
                 url: "https://jsonplaceholder.typicode.com/posts",
                 dataType: "json", 
                 success: function (result, status) {
@@ -28,7 +28,19 @@
                     });
                     $('#content').html(content);
                 }
-            });
+            });*/
+
+            $.get(
+                "https://covid19.ddc.moph.go.th/api/Cases/today-cases-all", 
+                function (data, status) {
+                    console.log(data);
+                    data.map(function(item, index){
+                        console.log(item.txn_date);
+                        alert("Data: " + item.txn_date + "\nStatus: " + status);
+                    });
+                }
+            );
+
         });
     </script>
 </body>
